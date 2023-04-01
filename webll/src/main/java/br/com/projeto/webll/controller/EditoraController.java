@@ -14,6 +14,16 @@ public class EditoraController {
     private long contador = 1;
     @GetMapping
     public List<Editora> listar(){return lista;}
+    @GetMapping("/{id}")
+    public Editora pegarUm(@PathVariable("id") Long id){
+        Integer indice = null;
+        for (Integer i = 0; i <lista.size() ; i++) {
+            if (lista.get(i).getId().equals(id)){
+                indice = i;
+                break;
+            }
+        }
+        return lista.get(indice);}
     @PostMapping
     public Editora criar(@RequestBody Editora editora){
         editora.setId(contador);
