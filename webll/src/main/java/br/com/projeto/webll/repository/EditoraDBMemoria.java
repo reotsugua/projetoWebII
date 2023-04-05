@@ -42,6 +42,17 @@ public class EditoraDBMemoria {
         return editora;
     }
 
+    public Editora editar(Editora editora){
+        for (Integer i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getId().equals(editora.getId())){
+                lista.set(i, editora);
+            } else{
+                throw new RuntimeException("Editora não existe");
+            }
+        }
+        return editora;
+    }
+
     public void delete(Long id){
         int indice = -1;
         for (Integer i = 0; i <lista.size() ; i++) {

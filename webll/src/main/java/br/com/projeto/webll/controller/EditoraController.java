@@ -39,7 +39,7 @@ public class EditoraController {
     @DeleteMapping("/{id}")
     public String deletar(@PathVariable("id") Long id){
 
-
+        editoraService.deletar(id);
         return "Editora com id: "+id+" removido com sucesso!";
     }
 
